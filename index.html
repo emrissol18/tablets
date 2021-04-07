@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>New Tab</title>
+</head>
+<body>
+	<div id="content">
+		<div id="addTablet">
+			<button title="add tablet">+</button>
+		</div>
+		<button id="clear" title="add tablet">clear</button>
+		<div class="tablet-item hidden" data-id="-1">
+			<div class="ti-control">
+				<div class="ti-edit" title="edit">/</div>
+				<div class="ti-delete" title="delete">&times;</div>
+			</div>
+			<div class="ti-content-o">
+				<h4 class="ti-title">Empty</h4>
+				<div class="ti-content"><div style="background-color: red"><p>simple p in red div</p></div></div>
+			</div>
+		</div>
+	</div>
+	<div id="dialog" class="hidden">
+		<div id="dialogOverlay"></div>
+		<div id="dialogContent">
+			<div id="dialogFormWrap">
+				<div id="dialogControl">
+					<div id="dialogBGSuggestWrap" class="hidden">
+						<div></div>
+						<div id="dialogBGSuggest">
+							<hr>
+							<div>
+								<input id="bgR" type="number" min="0" class="bgs-i" title="red">
+								<input id="bgG" type="number" min="0" class="bgs-i" title="green">
+								<input id="bgB" type="number" min="0" class="bgs-i" title="blue">
+								<input id="bgT" type="number" min="0" class="bgs-i" title="transparensy">
+								<button id="bgsSubmit" style="float: right" title="Accept">accept</button>
+							</div>
+						</div>
+					</div>
+					<div id="dialogStyle" class="dialog-control" title="edit item style"></div>
+					<div id="dialogClose" class="dialog-control"><span title="close">&times;</span></div>
+				</div>
+				<form id="dialogForm" onsubmit="" method="post">
+					<div class="form-control">
+						<input type="text" id="titleI" placeholder="Title" name="title" autocomplete="off">
+					</div>
+					<div class="form-control">
+						<textarea name="content" id="contentTa" cols="30" rows="10" placeholder="html content" autocomplete="off" autofocus></textarea>
+					</div>
+					<div class="form-control">
+						<button type="submit" style="float: right">Accept</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="components/LSManager.js"></script>
+<script type="text/javascript" src="components/DialogBg.js"></script>
+<script type="text/javascript" src="components/Dialog.js"></script>
+<script type="text/javascript" src="components/Tablet.js"></script>
+<script type="text/javascript" src="./script.js"></script>
+</html>

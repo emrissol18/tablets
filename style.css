@@ -1,0 +1,202 @@
+html, body{
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	width: 100%;
+	height: 100%;
+	font-family: Calibri, sans-serif;
+	user-select: none;
+}
+#content{
+	position: relative;
+	background-color: rgb(53, 54, 58);
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.tablet-item{
+	position: absolute;
+	height: auto;
+	min-width: 160px;
+	max-width: 340px;
+	font-size: 16px;
+}
+.tablet-item .ti-control{
+	position: absolute;
+	width: auto;
+	height: 11px;
+	right: 0;
+	top: 0;
+	padding: 4px;
+}
+.tablet-item .ti-control *{
+	display: inline-block;
+	font-size: 22px;
+	cursor: pointer;
+	line-height: 8px;
+	overflow: hidden;
+	margin: 0 2px;
+	width: 12px;
+	height: 10px;
+}
+/*.tablet-item .ti-edit{*/
+/*	border-top: 8px solid darkblue;*/
+/*	border-left: 6px solid transparent;*/
+/*	border-right: 6px solid transparent;*/
+/*}*/
+.tablet-item .ti-content-o{
+	word-break: break-all;
+	padding: 6px;
+}
+.tablet-item .ti-title{
+	margin: 0 22px 8px;
+	text-align: center;
+}
+.tablet-item .ti-content{
+	padding: 0 0 10px 10px;
+	max-height: 380px;
+	overflow-y: scroll;
+}
+.tablet-item .ti-content::-webkit-scrollbar{
+	visibility: hidden;
+}
+#addTablet{
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	padding: 10px;
+	width: 40px;
+	height: 40px;
+}
+#addTablet button{
+	font-family: impact, serif;
+	font-size: 52px;
+	line-height: 26px;
+	border: none;
+	border-radius: 50%;
+	opacity: .2;
+	width: 100%;
+	height: 100%;
+	outline: none;
+}
+#addTablet button:hover{
+	opacity: 1;
+}
+.hidden{
+	display: none !important;
+}
+
+
+#dialog{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: block;
+	z-index: 2000;
+}
+#dialogOverlay{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: black;
+	opacity: .6;
+}
+#dialogContent{
+	background-color: whitesmoke;
+	position: relative;
+	margin: 6% auto;
+	padding: 40px 20px;
+	width: 600px;
+	height: auto;
+	max-height: 500px;
+}
+#dialogControl{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 4px;
+}
+#dialogControl .dialog-control{
+	display: inline-block;
+	margin: 0 6px;
+	cursor: pointer;
+}
+#dialogStyle{
+	width: 16px;
+	height: 16px;
+	border: 1px solid black;
+}
+#dialogBGSuggestWrap{
+	position: absolute;
+	top: 14px;
+	right: 64px;
+	width: 184px;
+	height: auto;
+	padding:20px 10px 10px 10px;
+	border: 1px solid black;
+	background-color: whitesmoke;
+}
+#dialogBGSuggestWrap > div:first-child{
+	width: 5px;
+	position: absolute;
+	right: -3.7px;
+	top: 5px;
+	height: 5px;
+	background-color: whitesmoke;
+	transform: rotate(45deg);
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+}
+#dialogBGSuggest span{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin: 0 2px;
+}
+
+#dialogBGSuggest .bgs-i{
+	width: 24px;
+	font-size: 12px;
+	display: inline-block;
+}
+#dialogBGSuggest .bgs-i::-webkit-inner-spin-button, #dialogBGSuggest .bgs-i::-webkit-outer-spin-button{
+	appearance: none;
+	margin: 0;
+}
+#dialog #bgsSubmit{
+	float: right;
+	font-size: 10px;
+	padding: 2px;
+}
+#dialogClose{
+	font-size: 30px;
+}
+#dialog #dialogFormWrap{
+	height: inherit;
+	max-height: inherit;
+	opacity: 1;
+}
+#dialog .form-control{
+	padding: 10px;
+	font-size: 20px;
+}
+#dialog .form-control *{
+	width: 100%;
+}
+#dialog .form-control button{
+	width: auto;
+	padding: 4px 10px;
+}
+
+#dialogForm #titleI{
+	line-height: 24px;
+	font-size: 18px;
+}
+#dialogForm #contentTa{
+	font-size: 14px;
+	resize: none;
+	height: 340px;
+}
