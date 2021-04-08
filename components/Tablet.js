@@ -169,16 +169,16 @@ class Tablet {
     }
 
     //Delete Tablet
-    deleteTabletHandler(tablet){
+    deleteTabletHandler(){
         // Tablet.currentTablet = tablet;
         // let id = Tablet.currentTablet.dataset.id;
         return (e) => {
             console.log('delete');
             // e.stopPropagation();
-            // if(id){
-            //     Tablet.lsManager.deleteTabletData(Tablet.currentTablet.dataId.id);
-            //     Tablet.currentTablet.tabletNode.parentNode.removeChild(Tablet.currentTablet.tabletNode);
-            // }
+            // this.tabletNode.parentNode.removeChild(this.tabletNode);
+            // Tablet.lsManager.deleteTabletData(this.dataId.id);
+            Tablet.currentTablet.tabletNode.parentNode.removeChild(Tablet.currentTablet.tabletNode);
+            Tablet.lsManager.deleteTabletData(Tablet.currentTablet.dataSet.id);
         }
     }
 
