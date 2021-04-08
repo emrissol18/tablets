@@ -20,6 +20,7 @@ html, body{
 	min-width: 160px;
 	max-width: 340px;
 	font-size: 16px;
+	border-radius: 2px;
 }
 .tablet-item .ti-control{
 	position: absolute;
@@ -39,14 +40,10 @@ html, body{
 	width: 12px;
 	height: 10px;
 }
-/*.tablet-item .ti-edit{*/
-/*	border-top: 8px solid darkblue;*/
-/*	border-left: 6px solid transparent;*/
-/*	border-right: 6px solid transparent;*/
-/*}*/
+
 .tablet-item .ti-content-o{
 	word-break: break-all;
-	padding: 6px;
+	padding: 28px 10px 10px;
 }
 .tablet-item .ti-title{
 	margin: 0 22px 8px;

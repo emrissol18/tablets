@@ -1,19 +1,24 @@
-/** LocalStorage Manager */
+/** Class for CRUD manipulation with localStorage. */
 class LSManager {
 
     static TABLETS_ALL = 'tablets-all';
     static TABLETS_LAST_IDS = 'tablets-lid';
 
-
     constructor() {
-        //store id's that last TabletData was deleted by
+        /** Array for deleted Tablets id. This prevents constant id grow,
+         * so that tablet with highest id will have id === (all tablets amount - 1).
+         * @see deleteTabletData
+         * @see getNextId
+         */
         this.lastIds = [];
-        //get all tablets from localStorage
+        //all tablets from localStorage
         this.tabletsDataAll = [];
     }
 
 
-    /** Save TabletData element. */
+    /** Create(save) TabletData element. If Tablet has valid id (present in array)
+     * then Update will be executed.
+     */
     saveTabletData(tabletData){
         this.tabletsDataAll = this.fetchTabletDataAll();
         let index = this.getIndex(tabletData.id);
@@ -27,11 +32,11 @@ class LSManager {
     }
 
 
+
     /** Delete item by ID and store the ID to be set for future TabletData element. */
     deleteTabletData(id){
         this.tabletsDataAll = this.fetchTabletDataAll();
         this.lastIds = this.fetchLastIds();
-        // console.log('deleting id ' + id);
         if (this.tabletsDataAll.length > 0) {
             for (let i = 0; i < this.tabletsDataAll.length; i++) {
                 if (this.tabletsDataAll[i].id === id) {
@@ -60,12 +65,6 @@ class LSManager {
         if (this.lastIds)
             localStorage.setItem(LSManager.TABLETS_LAST_IDS, JSON.stringify(this.lastIds));
     }
-
-    /** Obtain all data from localStorage*/
-    // fetchAll(){
-    //     this.tabletsDataAll = this.fetchTabletDataAll();
-    //     this.lastIds = this.fetchLastIds();
-    // }
 
     fetchTabletDataAll(){
         let tabletsAll = JSON.parse( localStorage.getItem(LSManager.TABLETS_ALL) );

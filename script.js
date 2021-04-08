@@ -1,5 +1,6 @@
 window.onload = function () {
 
+
     /** Config */
 
     var content = document.getElementById("content");
@@ -7,35 +8,32 @@ window.onload = function () {
 
     let lsManager = Tablet.lsManager;
 
+
+
+
     /** App */
 
     addTabletButton.onclick = addTabletBtnClickHandler();
-    document.onmouseup = (e) => {
-        Tablet.isMouseDown = false;
-        // console.log(lsManager.fetchTabletDataAll());
-    };
 
-    document.getElementById('clear').addEventListener('click', function () {
-        localStorage.clear();
-    });
-    // localStorage.clear();
+    document.onmouseup = (e) => { Tablet.isMouseDown = false; };
+
     displayStoredTables();
+
+
 
     /** Event Handlers */
 
-    //Tablet
     function addTabletBtnClickHandler() {
         return (e) => {
             e.preventDefault();
-            let tablet = createTablet();
-            content.appendChild(tablet.tabletNode);
-            // let tabletData = new TabletData(
-            //     parseInt(tablet.tabletNode.style.left),
-            //     parseInt(tablet.tabletNode.style.top),
-            //     tablet.title.innerText,
-            //     tablet.content.innerHTML);
+            content.appendChild(createTablet().tabletNode);
         };
     }
+
+
+
+
+    /** Functions */
 
     function createTablet(lsTabletData) {
         let tablet = lsTabletData ? new Tablet(lsTabletData) : new Tablet();
@@ -52,15 +50,6 @@ window.onload = function () {
             }
         }
     }
-
-
-    // function getCurrentTabletTitle() {
-    //     return Tablet.currentTablet.getElementsByClassName('ti-title')[0];
-    // }
-    //
-    // function getCurrentTabletContent() {
-    //     return Tablet.currentTablet.getElementsByClassName('ti-content')[0];
-    // }
 
 
 };

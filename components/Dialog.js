@@ -1,3 +1,4 @@
+/** Dialog modal for Tablet change. */
 class Dialog {
 
     static lsManger = new LSManager();
@@ -6,6 +7,7 @@ class Dialog {
         this.dialogBg = new DialogBg();
 
         this.styleNode.addEventListener('click', this.styleNodeClickEventHandler());
+
         this.closeNode.onclick = this.close();
         this.overlayNode.onclick = this.close();
         this.formNode.onsubmit = this.formNodeSubmitEventHandler();
@@ -44,15 +46,16 @@ class Dialog {
     }
 
 
+
+    /** Event Handlers */
+
     formNodeSubmitEventHandler() {
         return (e) => {
             e.preventDefault();
             if( !Tablet.currentTablet){
-                // console.log('tablet is null');
                 return;
             }
 
-            // console.log('DIALOG DATA: ' + JSON.stringify(this.getData()));
             let {title, content} = this.getData();
             this.closeNode.click();
             Tablet.currentTablet.setTitle(title);
@@ -63,12 +66,14 @@ class Dialog {
         }
     }
 
-    close() {
+    styleNodeClickEventHandler() {
         return (e) => {
-            this.dialogNode.classList.add('hidden');
-            this.setDataDefault();
+            this.dialogBg.show();
         }
     }
+
+
+    /** Functions */
 
     show() {
         this.setStyleNodeBGColor();
@@ -76,10 +81,10 @@ class Dialog {
         this.content.focus();
     }
 
-
-    styleNodeClickEventHandler() {
+    close() {
         return (e) => {
-            this.dialogBg.show();
+            this.dialogNode.classList.add('hidden');
+            this.setDataDefault();
         }
     }
 
